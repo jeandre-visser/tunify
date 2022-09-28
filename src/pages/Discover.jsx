@@ -11,8 +11,9 @@ const Discover = () => {
         <select
           onChange={() => {}}
           value=""
-          className=""
+          className="bg-[#FFF] text-black-400 p-3 text-sm mt-5 rounded-lg sm:mt-0"
         >
+          {genres.map((genre) => <option>{genre.title}</option>)}
         </select>
       </div>
     </div>
