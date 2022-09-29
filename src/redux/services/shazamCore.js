@@ -14,5 +14,8 @@ fetch('https://shazam-core.p.rapidapi.com/v1/charts/world', options)
   .catch(err => console.error(err));
 
   export const shazamCoreApi = createApi({
-    reducerPath: 'shazamCoreApi'
+    reducerPath: 'shazamCoreApi',
+    baseQuery: fetchBaseQuery({
+      baseUrl: 'https://shazam-core.p.rapidapi.com/v1'
+    })
   })
