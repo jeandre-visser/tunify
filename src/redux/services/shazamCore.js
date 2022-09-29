@@ -8,6 +8,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
       prepareHeaders: (headers) => {
         headers.set('X-RapidAPI-Key', SHAZAM_RAPID_API_KEY);
         return headers;
-      }
+      },
+    }),
+    endpoints: (builder) => ({
+      getTopCharts: builder.query({ query: '/charts/world' })
     })
-  })
+  });
+
+  export const { useGetTopChartsQuery } = shazamCoreApi;
