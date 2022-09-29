@@ -14,7 +14,7 @@ const SongCard = ({ song, index }) => {
       </div>
       <img src={song.images.coverart} alt="song_image" />
     </div>
-    <div className="mt-4 flex flex-col">
+    <div className="flex flex-col">
       <p className="font-semibold text-lg text-[#FFF] truncate">
         <Link to={'/songs/${song?.key}'}>{song.title}</Link>
       </p>
