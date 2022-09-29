@@ -1,5 +1,7 @@
+import { FaPauseCircle, FaPlayCircle } from 'react-icons';
+ 
 const PlayPause = () => (
-  <div>Loader</div>
+  <div></div>
 );
 
 export default PlayPause;
