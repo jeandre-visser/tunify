@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 
-const SongCard = ({ song, index }) => {
+const SongCard = ({ song, index, isPlaying, activeSong, data }) => {
 
-  const activeSong = 'mock'; 
+  const handlePlayClick = () => {
+    
+  }
+
   const handlePauseClick = () => {
 
   }
+
 
   return (
   <div className="flex flex-col w-[240px] p-4 bg-[#FFF]/20 backdrop-blur-sm animate-slideup rounded-md cursor-pointer">
