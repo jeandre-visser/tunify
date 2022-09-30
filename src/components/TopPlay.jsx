@@ -82,7 +82,15 @@ const TopPlay = () => {
           centeredSlides
           modules={[FreeMode]}
           >
-            
+            {topSongs?.map((song, index) => (
+              <SwiperSlide
+                key={song?.key}
+                className="shadow-lg rounded-full"
+                style={{ width: '25%', height: 'auto'}}
+              >
+                
+              </SwiperSlide>
+          ))}
           </Swiper>
       </div>
     </div>
