@@ -55,6 +55,24 @@ const TopPlay = () => {
           ))}
         </div>
       </div>
+
+      <div className="flex flex-col w-full mt-10">
+        <div className="flex flex-row justify-between items-center">
+          <h2 className="text-[#FFF] font-bold text-2xl">Top Artists</h2>
+          <Link to="/top-artists" >
+            <p className="text-gray text-base">Show more</p>
+          </Link>
+        </div>
+        <div className="mt-4 flex flex-col gap-1">
+          {topSongs?.map((song, index) => (
+            <TopChartCard
+              key={song.key}
+              song={song}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 
