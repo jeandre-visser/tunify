@@ -20,7 +20,9 @@ const TopChartCard = ({ song, index }) => (
             {song?.title}
           </p>
         </Link>
-        
+        <Link to={`/artists/${song?.artists[0].adamid}`}>
+          <p className="text-base font-bold text-gray-200 mt-2 ">{song?.subtitle}</p>
+        </Link>
       </div>
     </div>
   </div>
@@ -53,7 +55,7 @@ const TopPlay = () => {
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-[#FFF] font-bold text-2xl">Top Songs</h2>
           <Link to="/top-charts" >
-            <p className="text-gray text-base">Show more</p>
+            <p className="text-gray-200 text-base">Show more</p>
           </Link>
         </div>
         <div className="mt-4 flex flex-col gap-1">
