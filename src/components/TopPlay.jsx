@@ -40,7 +40,7 @@ const TopPlay = () => {
     <div ref={divRef} className="flex flex-col xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] max-w-full" >
       <div className="flex flex-col w-full">
         <div className="flex flex-row justify-between items-center">
-          <h2 className="text-[#FFF] font-bold text-2xl">Top Charts</h2>
+          <h2 className="text-[#FFF] font-bold text-2xl">Top Songs</h2>
           <Link to="/top-charts" >
             <p className="text-gray text-base">Show more</p>
           </Link>
@@ -88,7 +88,9 @@ const TopPlay = () => {
                 className="shadow-lg rounded-full"
                 style={{ width: '25%', height: 'auto'}}
               >
-                <Link to={`/artists/${song?.artists[0].adamid}`}></Link>
+                <Link to={`/artists/${song?.artists[0].adamid}`}>
+                  <img src={song?.images.background} alt="artistName" className="rounded-[40px] w-full object-cover" />
+                </Link>
               </SwiperSlide>
           ))}
           </Swiper>
