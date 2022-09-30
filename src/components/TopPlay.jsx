@@ -9,6 +9,12 @@ import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 
+const TopChartCard = ({ song, index }) = (
+  <div className="w-full flex flex-row items-center hover:bg-[#50476d] py-2 p-4 rounded-lg cursor-pointer mb-2">
+    {song.title}
+  </div>
+)
+
 const TopPlay = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
