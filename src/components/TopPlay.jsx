@@ -11,7 +11,10 @@ import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 
 const TopChartCard = ({ song, index }) => (
   <div className="w-full flex flex-row items-center hover:bg-[#50476d] py-2 p-4 rounded-lg cursor-pointer mb-2">
-    {song.title}
+    <h2 className="font-bold mr-4 text-lg text-[#FFF]" >{index + 1}</h2>
+    <div className="flex-1 flex flex-row justify-between items-center">
+      <img className="w-40 h-40 rounded-[40px]" src={song?.images?.coverart} alt={song?.title} />
+    </div>
   </div>
 );
 
