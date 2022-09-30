@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { RiCloseLine } from 'react-icons/ri';
+import { HiOutlineMenu } from 'react-icons/hi';
 import { links } from '../assets/constants';
 import { logo } from '../assets';
 
-const NavLinks = ({ handleCLick }) => (
+const NavLinks = ({ handleClick }) => (
   <div className="mt-8">
     {links.map((link) => (
       <NavLink className="flex flex-row justify-start items-center ml-8 my-8 text-md font-medium text-[#8C52FF] hover:text-[#FFF]"
         key={link.name}
         to={link.to}
-        onClick={() => handleCLick && handleClick()}
+        onClick={() => handleClick && handleClick()}
       >
         <link.icon className="w-8 h-8 mr-4"/>
         {link.name}
@@ -27,6 +28,17 @@ const Sidebar = () => {
       <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#1c1134]" >
         <img src={logo} alt="logo" className="w-full h-12 object-contain" />
         <NavLinks  />
+      </div>
+      <div className="absolute md:hidden block top-6 right-3">
+        {mobileMenuOpen ? 
+          <RiCloseLine className="w-8 h-8 text-[#FFF] mr-4" /> : 
+          <HiOutlineMenu className="w-8 h-8 text-[#FFF] mr-4" />
+        }
+      </div>
+
+      <div className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl from-[#FFF]/10 to-[#331f5d] backdrop-blur-lg z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-left-full'}`} >
+        <img src={logo} alt="logo" className="w-full h-12 object-contain" />
+        <NavLinks handleClick={() => setMobileMenuOpen(false)} />
       </div>
     </>
   );
