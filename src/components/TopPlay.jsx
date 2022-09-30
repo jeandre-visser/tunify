@@ -17,6 +17,10 @@ const TopPlay = () => {
 
   const topSongs = data?.slice(0, 5);
 
+  useEffect(() => {
+    divRef.current.scrollIntoView({ behavior: 'smooth' });
+  });
+
   const handlePlayClick = () => {
     dispatch(setActiveSong({ song, data, index }));
     dispatch(playPause(true));
@@ -25,6 +29,12 @@ const TopPlay = () => {
   const handlePauseClick = () => {
     dispatch(playPause(false));
   };
+
+  return (
+    <div ref={divRef}>
+
+    </div>
+  );
 
 };
 
