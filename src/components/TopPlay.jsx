@@ -21,7 +21,7 @@ const TopPlay = () => {
   const { data } = useGetTopChartsQuery();
   const divRef = useRef(null);
 
-  const topSongs = data?.slice(0, 5);
+  const topCharts = data?.slice(0, 5);
 
   useEffect(() => {
     divRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -46,7 +46,7 @@ const TopPlay = () => {
           </Link>
         </div>
         <div className="mt-4 flex flex-col gap-1">
-          {topSongs?.map((song, index) => (
+          {topCharts?.map((song, index) => (
             <TopChartCard
               key={song.key}
               song={song}
@@ -64,7 +64,7 @@ const TopPlay = () => {
           </Link>
         </div>
         <div className="mt-4 flex flex-col gap-1">
-          {topSongs?.map((song, index) => (
+          {topCharts?.map((song, index) => (
             <TopChartCard
               key={song.key}
               song={song}
@@ -82,13 +82,13 @@ const TopPlay = () => {
           centeredSlides
           modules={[FreeMode]}
           >
-            {topSongs?.map((song, index) => (
+            {topCharts?.map((song, index) => (
               <SwiperSlide
                 key={song?.key}
                 className="shadow-lg rounded-full"
                 style={{ width: '25%', height: 'auto'}}
               >
-                
+                <Link to={`/artists/${song?.artists[0].adamid}`}></Link>
               </SwiperSlide>
           ))}
           </Swiper>
