@@ -21,7 +21,7 @@ const NavLinks = ({ handleClick }) => (
 )
  
 const Sidebar = () => {
-  const [mobileMenuOpen, setModileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   return (
     <>
@@ -30,13 +30,13 @@ const Sidebar = () => {
         <NavLinks  />
       </div>
       <div className="absolute md:hidden block top-6 right-3">
-        {mobileMenuOpen ? 
-          <RiCloseLine className="w-8 h-8 text-[#FFF] mr-4" /> : 
-          <HiOutlineMenu className="w-8 h-8 text-[#FFF] mr-4" />
+        {mobileMenuOpen ?
+          <RiCloseLine className="w-8 h-8 text-[#FFF] mr-4" onClick={() => setMobileMenuOpen(false)} /> :
+          <HiOutlineMenu className="w-8 h-8 text-[#FFF] mr-4" onClick={() => setMobileMenuOpen(true)} />
         }
       </div>
 
-      <div className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl from-[#FFF]/10 to-[#331f5d] backdrop-blur-lg z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-left-full'}`} >
+      <div className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl from-[#FFF]/70 to-[#331f5d] backdrop-blur-lg z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-right-full'}`} >
         <img src={logo} alt="logo" className="w-full h-12 object-contain" />
         <NavLinks handleClick={() => setMobileMenuOpen(false)} />
       </div>
