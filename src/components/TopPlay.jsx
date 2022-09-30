@@ -72,6 +72,18 @@ const TopPlay = () => {
             />
           ))}
         </div>
+
+        <Swiper 
+          className="mt-5"
+          slidesPerView="auto"
+          spaceBetween={16}
+          freeMode
+          centeredSlidesBounds
+          centeredSlides
+          modules={[FreeMode]}
+          >
+            
+          </Swiper>
       </div>
     </div>
   );
