@@ -32,7 +32,7 @@ const SongDetails = () => {
       />
 
       <div className="mb-8">
-        <h3 className="text-[#FFF] text-2xl font-bold">Lyrics</h3>
+        <h3 className="text-[#FFF] text-4xl font-bold">Lyrics</h3>
         <div className="mt-6" >
           {songData?.sections[1].type === 'LYRICS' ? songData?.sections[1].text.map((lyric, index) => (
             <p className="text-[#FFF] text-base my-1">{lyric}</p>
