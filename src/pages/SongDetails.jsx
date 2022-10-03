@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-
+import { DetailsHeader, Error, RelatedSongs, Loader } from '../components';
+import { useSelector, useDispatch } from "react-redux";
 
 const SongDetails = () => {
 
