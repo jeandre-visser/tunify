@@ -27,10 +27,9 @@ const SongDetails = () => {
 
   return (
     <div className="flex flex-col">
-     {/* <DetailsHeader 
-        artistId={artistId} 
+     <DetailsHeader 
         songData={songData} 
-  /> */}
+      />
 
       <div className="mb-8">
         <h3 className="text-[#FFF] text-2xl font-bold">Lyrics</h3>
