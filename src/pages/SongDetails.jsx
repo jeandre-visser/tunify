@@ -21,8 +21,8 @@ const SongDetails = () => {
         <h3 className="text-[#FFF] text-2xl font-bold">Lyrics</h3>
         <div className="mt-6">
           {songData?.section[1].type === 'LYRICS' ? songData?.sections[1].text.map((lyric, index) => (
-            <p>{lyric}</p>
-          )) : <p>No lyrics were found</p>
+            <p className="text-[#FFF]-300 text-base my-1">{lyric}</p>
+          )) : <p className="text-[#FFF]-300 text-base my-1">No lyrics were found</p>
           }
         </div>
       </div>
