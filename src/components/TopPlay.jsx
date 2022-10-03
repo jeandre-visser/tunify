@@ -9,7 +9,7 @@ import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 
-const TopChartCard = ({ song, index }) => (
+const TopChartCard = ({ song, index, activeSong, isPlaying, handlePauseClick, handlePlayClick }) => (
   <div className="w-full flex flex-row items-center hover:bg-[#50476d] py-2 p-4 rounded-lg cursor-pointer mb-2">
     <h2 className="font-bold mr-4 text-xl text-[#FFF]" >{index + 1}</h2>
     <div className="flex-1 flex flex-row justify-between items-center">
@@ -25,6 +25,13 @@ const TopChartCard = ({ song, index }) => (
         </Link>
       </div>
     </div>
+    <PlayPause 
+      activeSong={activeSong}
+      song={song}
+      handlePause={handlePauseClick}
+      handlePlayClick={handlePlayClick}
+      isPlaying={isPlaying}
+    />
   </div>
 );
 
