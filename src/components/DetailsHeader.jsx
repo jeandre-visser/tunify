@@ -8,16 +8,19 @@ const DetailsHeader = ({ songData, artistId, artistData }) => {
     <div className="absolute flex -items-center inset-0">
       <img 
       className="sm:w-48 w-28 sm:h-48 h-28 rounded-[10px] object-cover border shadow-xl shadow-black"
-        src={artistId ? artistData?.artistData[artistId]?.attributes?.artwork?.url.replace('{w}', '500').replace('{h}', '500') : songData?.images?.coverart}
+        src={artistId ? artistData?.artistData[artistId]?.attributes.artwork?.url.replace('{w}', '500').replace('{h}', '500') : songData?.images?.coverart}
         alt="cover-art"
       />
       <div className="ml-4">
-        <p className="text-[#FFF] text-xl sm:text-2xl font-bold">{artistId ? artistData?.artists[artistId]?.attributes.name : songData?.title}</p>
+        <p className="text-[#FFF] text-xl sm:text-2xl font-bold">{artistId ? artistData?.artists[artistId]?.attributes?.name : songData?.title}</p>
         {!artistId && (
           <Link to={`/artists/${songData?.artists[0].adamid}`}>
             <p className="text-base text-gray mt-2">{songData?.subtitle}</p>
           </Link>
         )}
+        <p className="text-base text-gray mt-2">
+          {artistId ? artistData?.artistData[artistId]?.attributes?.genreNames[0] : songData?.genres?.primary}
+        </p>
       </div>
     </div>
   </div>
