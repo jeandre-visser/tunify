@@ -27,17 +27,17 @@ const SongDetails = () => {
 
   return (
     <div className="flex flex-col">
-      <DetailsHeader 
+     {/* <DetailsHeader 
         artistId={artistId} 
         songData={songData} 
-      />
+  /> */}
 
       <div className="mb-8">
         <h3 className="text-[#FFF] text-2xl font-bold">Lyrics</h3>
-        <div className="mt-6">
-          {songData?.section[1].type === 'LYRICS' ? songData?.sections[1].text.map((lyric, index) => (
-            <p className="text-[#FFF]-300 text-base my-1">{lyric}</p>
-          )) : <p className="text-[#FFF]-300 text-base my-1">No lyrics were found</p>
+        <div className="mt-6" >
+          {songData?.sections[1].type === 'LYRICS' ? songData?.sections[1].text.map((lyric, index) => (
+            <p className="text-[#FFF] text-base my-1">{lyric}</p>
+          )) : <p className="text-[#FFF] text-base my-1">No lyrics were found</p>
           }
         </div>
       </div>
