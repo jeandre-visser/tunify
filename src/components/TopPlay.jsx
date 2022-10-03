@@ -47,7 +47,7 @@ const TopPlay = () => {
     divRef.current.scrollIntoView({ behavior: 'smooth' });
   });
 
-  const handlePlayClick = () => {
+  const handlePlayClick = (song, index) => {
     dispatch(setActiveSong({ song, data, index }));
     dispatch(playPause(true));
   };
@@ -71,6 +71,10 @@ const TopPlay = () => {
               key={song.key}
               song={song}
               index={index}
+              activeSong={activeSong}
+              isPlaying={isPlaying}
+              handlePauseClick={handlePauseClick}
+              handlePlayClick={() => handlePlayClick(song, index)}
             />
           ))}
         </div>
@@ -82,19 +86,6 @@ const TopPlay = () => {
           <Link to="/top-artists" >
             <p className="text-gray text-base">Show more</p>
           </Link>
-        </div>
-        <div className="mt-4 flex flex-col gap-1">
-          {topCharts?.map((song, index) => (
-            <TopChartCard
-              key={song.key}
-              song={song}
-              index={index}
-              activeSong={activeSong}
-              isPlaying={isPlaying}
-              handlePauseClick={handlePauseClick}
-              handlePlayClick={handlePlayClick}
-            />
-          ))}
         </div>
 
         <Swiper 
