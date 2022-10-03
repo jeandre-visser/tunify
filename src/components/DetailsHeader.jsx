@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const DetailsHeader = ({ songData, artistId, artistData }) => {
 
   return (
-  <div className="flex flex-col w-full relative mt-4 mb-4 bg-gradient-to-l from-transparent to-black sm:h-48 h-28 rounded-[10px]">
+  <div className="flex flex-col w-full relative mt-4 mb-4 bg-gradient-to-l from-transparent to-[#171619] sm:h-48 h-28 rounded-[10px]">
     <div className="w-full"/>
     <div className="absolute flex -items-center inset-0">
       <img 
