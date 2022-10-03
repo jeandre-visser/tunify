@@ -23,6 +23,7 @@ const DetailsHeader = ({ songData, artistId, artistData }) => {
         </p>
       </div>
     </div>
+    <div className="h-24 sm:h-44 w-full" />
   </div>
   )
 };
