@@ -3,7 +3,8 @@ import { DetailsHeader, Error, RelatedSongs, Loader } from '../components';
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveSong, playPause } from "../redux/features/playerSlice";
 import { useGetSongDetailsQuery, useGetSongRelatedQuery } from "../redux/services/shazamCore";
-
+import { handlePauseClick, handlePlayClick } from '../components/TopPlay';
+ 
 const SongDetails = () => {
   const { songid } = useParams();
   const dispatch = useDispatch();
@@ -36,6 +37,8 @@ const SongDetails = () => {
         data={data}
         isPlaying={isPlaying}
         activeSong={activeSong}
+        handlePauseClick={handlePauseClick}
+        handlePlayClick={handlePlayClick}
       />
     </div>
   );
