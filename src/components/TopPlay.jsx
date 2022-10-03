@@ -82,6 +82,10 @@ const TopPlay = () => {
               key={song.key}
               song={song}
               index={index}
+              activeSong={activeSong}
+              isPlaying={isPlaying}
+              handlePauseClick={handlePauseClick}
+              handlePlayClick={handlePlayClick}
             />
           ))}
         </div>
