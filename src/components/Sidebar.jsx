@@ -8,7 +8,7 @@ import { logo } from '../assets';
 const NavLinks = ({ handleClick }) => (
   <div className="mt-8">
     {links.map((link) => (
-      <NavLink className="flex flex-row justify-start items-center ml-8 my-8 text-md font-medium text-[#8C52FF] hover:text-[#FFF]"
+      <NavLink className="flex flex-row justify-start items-center ml-8 my-8 text-md font-medium text-[#e1d2ff] hover:text-[#FFF]"
         key={link.name}
         to={link.to}
         onClick={() => handleClick && handleClick()}
@@ -25,7 +25,7 @@ const Sidebar = () => {
   
   return (
     <>
-      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#1c1134]" >
+      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-gradient-to-r from-[#3a0292] to-[#620dec]" >
         <img src={logo} alt="logo" className="w-full h-12 object-contain" />
         <NavLinks  />
       </div>
