@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { DetailsHeader, Error, RelatedSongs, Loader } from '../components';
 import { useSelector } from "react-redux";
-import { useGetArtistDetailsQuery, useGetSongRelatedQuery } from "../redux/services/shazamCore";
+import { useGetArtistDetailsQuery } from "../redux/services/shazamCore";
  
 const ArtistDetails = () => {
   const { songid } = useParams();
