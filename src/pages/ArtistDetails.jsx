@@ -4,41 +4,22 @@ import { useSelector } from "react-redux";
 import { useGetArtistDetailsQuery } from "../redux/services/shazamCore";
  
 const ArtistDetails = () => {
-  const { songid } = useParams();
-  const dispatch = useDispatch();
+  const { id: artistId } = useParams();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data: songData, isFetching: isFetchingArtistDetails } = useGetArtistDetailsQuery({ songid });
-  const { data, isFetching: isFetchingRelatedSongs, error } = useGetSongRelatedQuery({ songid });
+  const { data: artistData, isFetching: isFetchingArtistDetails, error } = useGetArtistDetailsQuery(artistId);
 
-  if (isFetchingRelatedSongs || isFetchingArtistDetails) return <Loader title="Loading song details" />;
+
+  if (isFetchingArtistDetails) return <Loader title="Loading artist details" />;
 
   if (error) return <Error />;
-
-  const handlePlayClick = (song, index) => {
-    dispatch(setActiveSong({ song, data, index }));
-    dispatch(playPause(true));
-  };
-
-  const handlePauseClick = () => {
-    dispatch(playPause(false));
-  };
-
 
   return (
     <div className="flex flex-col">
      <DetailsHeader 
-        songData={songData} 
+        artistData={artistData} 
+        artistId={artistId}
       />
 
-      <div className="mb-8 mt-6">
-        <h3 className="text-[#FFF] text-4xl font-bold underline underline-offset-4">Lyrics</h3>
-        <div className="mt-6" >
-          {songData?.sections[1].type === 'LYRICS' ? songData?.sections[1].text.map((lyric, index) => (
-            <p className="text-[#FFF] text-base my-1">{lyric}</p>
-          )) : <p className="text-[#FFF] text-base my-1">No lyrics were found</p>
-          }
-        </div>
-      </div>
       <RelatedSongs 
         data={data}
         isPlaying={isPlaying}
