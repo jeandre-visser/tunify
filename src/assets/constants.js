@@ -1,6 +1,7 @@
-import { HiChartBar, HiOutlinePhotograph } from 'react-icons/hi';
+import { HiChartBar } from 'react-icons/hi';
 import { RiHome2Line } from 'react-icons/ri';
 import { BsFillPeopleFill } from 'react-icons/bs';
+import { GoGlobe } from 'react-icons/go'
 
 export const genres = [
   { title: 'Pop', value: 'POP' },
@@ -21,7 +22,7 @@ export const genres = [
 
 export const links = [
   { name: 'Browse', to: '/', icon: RiHome2Line },
-  { name: 'Around You', to: '/around-you', icon: HiOutlinePhotograph },
+  { name: 'Your Country', to: '/around-you', icon: GoGlobe },
   { name: 'Top Charts', to: '/top-charts', icon: HiChartBar },
   { name: 'Top Artists', to: '/top-artists', icon: BsFillPeopleFill }
 ];
