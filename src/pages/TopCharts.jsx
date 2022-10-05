@@ -1,22 +1,18 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { Loader, Error, SongCard } from '../components';
-import { useGetSongsByCountryQuery } from '../redux/services/shazamCore';
+import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 
-const AroundYou = () => {
+const TopCharts = () => {
 
-  const [country, setCountry] = useState('');
-  const [loading, setLoading] = useState(true);
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data, isFetching, error } = useGetSongsByCountryQuery(country);
+  const { data, isFetching, error } = useGetTopChartsQuery();
 
-  if (isFetching && loading) return <Loader title="Loading popular songs in your country"/>;
-  if (error && country) return <Error />;
+  if (isFetching) return <Loader title="Loading top charts"/>;
+  if (error) return <Error />;
 
   return (
     <div className="flex flex-col">
-      <h2 className="font-bold text-[#FFF] text-3xl text-left mt-8 mb-12">Popular Songs in <span>Canada</span></h2>
+      <h2 className="font-bold text-[#FFF] text-3xl text-left mt-8 mb-12">Browse Top Charts</h2>
       <div className="flex flex-wrap justify-center sm:justify-start gap-8">
         {data?.map((song, index) => (
           <SongCard 
@@ -32,4 +28,4 @@ const AroundYou = () => {
     </div>
  );
 }
-export default AroundYou;
+export default TopCharts;
