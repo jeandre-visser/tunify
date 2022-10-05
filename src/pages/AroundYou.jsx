@@ -22,8 +22,11 @@ const AroundYou = () => {
   if (error && country) return <Error />;
 
   return (
-    <div>
+    <div className="flex flex-col">
+      <h2 className="font-bold text-[#FFF] text-3xl text-left mt-8 mb-12">Popular Songs Near You</h2>
+      <div className="flex flex-wrap justify-center sm:justify-start gap-8">
 
+      </div>
     </div>
  );
 }
