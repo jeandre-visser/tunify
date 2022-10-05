@@ -5,7 +5,9 @@ const ArtistCard = ({ track }) => {
 
   return (
 
-    <div>ArtistCard</div>
+    <div className="flex flex-col w-[250px] bg-[#FFF]/5 p-2 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
+      <img src={track?.images?.coverart} alt="artist" className="w-full h54 rounded-lg" />
+    </div>
 
   );
 };
