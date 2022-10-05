@@ -12,14 +12,10 @@ const TopArtists = () => {
     <div className="flex flex-col">
       <h2 className="font-bold text-[#FFF] text-3xl text-left mt-8 mb-12">Browse Top Artists</h2>
       <div className="flex flex-wrap justify-center sm:justify-start gap-8">
-        {data?.map((song, index) => (
-          <SongCard 
-            key={song.key}
-            data={data}
-            index={index}
-            song={song}
-            isPlaying={isPlaying}
-            activeSong={activeSong}
+        {data?.map((track) => (
+          <ArtistCard 
+            key={track.key}
+            track={track}
           />
         ))}
       </div>
