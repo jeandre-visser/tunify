@@ -26,7 +26,7 @@ const Searchbar = () => {
         autoComplete="off"
         placeholder="Search"
         value={search}
-        onChange={() => {}}
+        onChange={(event) => setSearch(event.target.value)}
       />
     </div>
   </form>
