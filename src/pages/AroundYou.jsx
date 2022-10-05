@@ -25,7 +25,16 @@ const AroundYou = () => {
     <div className="flex flex-col">
       <h2 className="font-bold text-[#FFF] text-3xl text-left mt-8 mb-12">Popular Songs Near You</h2>
       <div className="flex flex-wrap justify-center sm:justify-start gap-8">
-
+        {data?.map((song, index) => (
+          <SongCard 
+            key={song.key}
+            data={data}
+            index={index}
+            song={song}
+            isPlaying={isPlaying}
+            activeSong={activeSong}
+          />
+        ))}
       </div>
     </div>
  );
