@@ -11,11 +11,13 @@ const Search = () => {
   if (isFetching) return <Loader title="Loading Top Charts"/>;
   if (error) return <Error />;
 
+  const songs = data?.tracks?.hits?.map(song => song.track);
+
   return (
     <div className="flex flex-col">
-      <h2 className="font-bold text-[#FFF] text-3xl text-left mt-8 mb-12">Browse Top Charts</h2>
+      <h2 className="font-semibold text-[#FFF] text-3xl text-left mt-8 mb-12">Results for <span className="font-bold">{search}</span></h2>
       <div className="flex flex-wrap justify-center sm:justify-start gap-6">
-        {data?.map((song, index) => (
+        {songs?.map((song, index) => (
           <SongCard 
             key={song.key}
             data={data}
