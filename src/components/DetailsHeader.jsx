@@ -4,7 +4,7 @@ const DetailsHeader = ({ songData, artistId, artistData }) => {
 
   const artist = artistData?.artists[artistId]?.attributes;
   return (
-  <div className="flex flex-col w-full relative mt-4 mb-4 bg-gradient-to-l from-transparent to-[#171619] sm:h-48 h-28 rounded-[10px]">
+  <div className="flex flex-col w-full relative mt-4 mb-8 bg-gradient-to-l from-transparent to-[#171619] sm:h-48 h-28 rounded-[10px]">
     <div className="w-full"/>
     <div className="absolute flex -items-center inset-0">
       <img 
