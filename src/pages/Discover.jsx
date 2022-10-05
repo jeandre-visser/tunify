@@ -1,14 +1,14 @@
 import { genres } from '../assets/constants';
 import { Loader, SongCard, Error } from '../components';
-import { useGetTopChartsQuery } from '../redux/services/shazamCore';
+import { useGetTopChartsQuery, useGetSongsByGenreQuery } from '../redux/services/shazamCore';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectGenreListId } from '../redux/features/playerSlice';
 
 const Discover = () => {
   const { activeSong, isPlaying, genreListId } = useSelector((state) => state.player);
   const dispatch = useDispatch();
-  const genreName = 'Pop';
-  const { data, isFetching, error } = useGetTopChartsQuery();
+  const genreName = genres.find(({ value }) => value === genreListId)?.title;
+  const { data, isFetching, error } = useGetSongsByGenreQuery(genreListId || 'POP');
   
   if(isFetching) return <Loader title="Just wait a beat" />;
   if (error) return <Error />;
