@@ -2,8 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go"
 
-const Searchbar = () => (
-  <form autocomplete="off"className="p-2 text-gray-400 focus-within:text-gray-600">
+const Searchbar = () => {
+
+  const navigate = useNavigate();
+  const [search, setSearch] = useState('');
+  const handleSubmit = (event) => {
+    event.preventDefualt();
+    navigate(`/search/${search}`)
+  }
+
+  return (
+  <form onSubmit={handleSubmit} autocomplete="off"className="p-2 text-gray-400 focus-within:text-gray-600">
     <label htmlFor="search-field" className="sr-only">
       Search songs
     </label>
@@ -16,11 +25,12 @@ const Searchbar = () => (
         type="search"
         autoComplete="off"
         placeholder="Search"
-        value=""
+        value={search}
         onChange={() => {}}
       />
     </div>
   </form>
-);
+  ); 
+};
 
 export default Searchbar;
