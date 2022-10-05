@@ -8,7 +8,17 @@ const Searchbar = () => (
       Search songs
     </label>
     <div className="flex flex-row justify-start items-center">
-
+      <GoSearch className="w-8 h-8 ml-4" />
+      <input 
+      className="flex-1 bg-transparent border-none outline-none text-[#fff] text-base placeholder-gray-300 p-6"
+        name="search-field"
+        id="search-field"
+        type="search"
+        autoComplete="off"
+        placeholder="Search"
+        value=""
+        onChange={() => {}}
+      />
     </div>
   </form>
 );
