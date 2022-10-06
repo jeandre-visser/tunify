@@ -36,7 +36,7 @@ const Sidebar = () => {
         }
       </div>
 
-      <div className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl from-[#FFF]/70 to-[#331f5d] backdrop-blur-lg z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-right-full'}`} >
+      <div className={`absolute top-0 w-[80%] h-full items-center bg-gradient-to-r from-[#3a0292] to-[#620dec] flex flex-col  z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-right-full'}`} >
         <img src={logo} alt="logo" className="w-full h-12 object-contain" />
         <NavLinks handleClick={() => setMobileMenuOpen(false)} />
       </div>
