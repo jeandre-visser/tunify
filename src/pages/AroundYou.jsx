@@ -6,24 +6,26 @@ import { useGetSongsByCountryQuery } from '../redux/services/shazamCore';
 
 const AroundYou = () => {
 
+  const regionNames = new Intl.DisplayNames(['en'], {type: 'region' });
+
   const [country, setCountry] = useState('');
   const [loading, setLoading] = useState(true);
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetSongsByCountryQuery(country);
 
-  // useEffect(() => {
-  //   axios.get(`https://geo.ipify.org/api/v2/country?apiKey=${import.meta.env.VITE_GEO_API_KEY}`)
-  //   .then(response => setCountry(response?.data?.location?.country))
-  //   .catch(error => console.log(error))
-  //   .finally(() => setLoading(false));
-  // }, [country]) 
+  useEffect(() => {
+    axios.get(`https://geo.ipify.org/api/v2/country?apiKey=${import.meta.env.VITE_GEO_API_KEY}`)
+    .then(response => setCountry(response?.data?.location?.country))
+    .catch(error => console.log(error))
+    .finally(() => setLoading(false));
+  }, [country]) 
 
   if (isFetching && loading) return <Loader title="Loading Songs Near You"/>;
   if (error && country) return <Error />;
 
   return (
     <div className="flex flex-col">
-      <h2 className="font-bold text-[#FFF] text-3xl text-left mt-8 mb-12">Popular Songs in <span>Canada</span></h2>
+      <h2 className="font-bold text-[#FFF] text-3xl text-left mt-8 mb-12">Popular Songs in <span>{regionNames.of(country)}</span></h2>
       <div className="flex flex-wrap justify-center sm:justify-start gap-8">
         {data?.map((song, index) => (
           <SongCard 
