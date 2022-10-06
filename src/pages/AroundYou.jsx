@@ -12,7 +12,7 @@ const AroundYou = () => {
   const { data, isFetching, error } = useGetSongsByCountryQuery(country);
 
   // useEffect(() => {
-  //   axios.get(`https://geo.ipify.org/api/v2/country?apiKey=at_KFeTf70hmDo9PzuLIvwVHQbLNSQPK`)
+  //   axios.get(`https://geo.ipify.org/api/v2/country?apiKey=${import.meta.env.VITE_GEO_API_KEY}`)
   //   .then(response => setCountry(response?.data?.location?.country))
   //   .catch(error => console.log(error))
   //   .finally(() => setLoading(false));
