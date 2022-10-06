@@ -4,18 +4,18 @@ import { useGetSongsBySearchQuery } from '../redux/services/shazamCore';
 import { useParams } from 'react-router-dom';
 
 const Search = () => {
-  const { search } = useParams();
+  const { searchName } = useParams();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data, isFetching, error } = useGetSongsBySearchQuery(search);
+  const { data, isFetching, error } = useGetSongsBySearchQuery(searchName);
 
-  if (isFetching) return <Loader title="Loading Top Charts"/>;
+  if (isFetching) return <Loader title="Loading Results"/>;
   if (error) return <Error />;
 
-  const songs = data?.tracks?.hits?.map(song => song.track);
+  const songs = data?.tracks?.hits?.map((song) => song.track);
 
   return (
     <div className="flex flex-col">
-      <h2 className="font-semibold text-[#FFF] text-3xl text-left mt-8 mb-12">Results for <span className="font-bold">{search}</span></h2>
+      <h2 className="font-semibold text-[#FFF] text-3xl text-left mt-8 mb-12">Results for <span className="font-bold text-[#fff]">{searchName}</span></h2>
       <div className="flex flex-wrap justify-center sm:justify-start gap-6">
         {songs?.map((song, index) => (
           <SongCard 
