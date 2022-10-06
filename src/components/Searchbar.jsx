@@ -7,12 +7,12 @@ const Searchbar = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const handleSubmit = (event) => {
-    event.preventDefualt();
+    event.preventDefault();
     navigate(`/search/${search}`)
   }
 
   return (
-  <form onSubmit={handleSubmit} autocomplete="off" className="p-1 text-gray-400 focus-within:text-gray-600">
+  <form onSubmit={handleSubmit} autoComplete="off" className="p-1 text-gray-400 focus-within:text-gray-600">
     <label htmlFor="search-field" className="sr-only">
       Search songs
     </label>
