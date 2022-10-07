@@ -10,10 +10,10 @@ import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 
 const TopChartCard = ({ song, index, activeSong, isPlaying, handlePauseClick, handlePlayClick }) => (
-  <div className="w-full flex flex-row items-center hover:bg-[#351f7c] py-2 p-4 rounded-lg cursor-pointer mb-1">
+  <div className="w-full flex flex-row items-center hover:bg-[#351f7c] py-2 p-4 rounded-lg cursor-pointer">
     <h2 className="font-bold mr-4 text-xl text-[#FFF]" >{index + 1}</h2>
     <div className="flex-1 flex flex-row justify-between items-center">
-      <img className="w-20 h-20 rounded-[10px]" src={song?.images?.coverart} alt={song?.title} />
+      <img className="w-[4.5rem] h-[4.5rem] rounded-[10px]" src={song?.images?.coverart} alt={song?.title} />
       <div className="flex-1 flex flex-col justify-center mx-4">
         <Link to={`/songs/${song.key}`}>
           <p className="text-xl font-bold text-[#FFF]">
@@ -101,7 +101,7 @@ const TopPlay = () => {
               <SwiperSlide
                 key={song?.key}
                 className="shadow-lg rounded-full"
-                style={{ width: '25%', height: 'auto'}}
+                style={{ width: '22%', height: 'auto'}}
               >
                 <Link to={`/artists/${song?.artists[0].adamid}`}>
                   <img src={song?.images.background} alt="artistName" className="rounded-[40px] w-full object-cover" />
