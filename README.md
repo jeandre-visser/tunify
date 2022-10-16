@@ -10,6 +10,7 @@ Check out the deployed application here: https://tunify-music-app.netlify.app/
 - Select 'Your Country' in the sidebar menu and popular songs within your country will be displayed.
 - Select any song by pressing play and the music player will slide in to the bottom of the screen.
 - Press on any song name for the lyrics and related songs or on an artist name to display related songs as well.
+- Responsive design: Desktop, tablet, and mobile friendly!
 
 ## Quick Glimpse
 
