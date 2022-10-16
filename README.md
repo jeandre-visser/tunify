@@ -10,7 +10,7 @@ Check out the deployed application here: https://tunify-music-app.netlify.app/
 
 ## Quick Glimpse
 ![Home page](https://github.com/jeandre-visser/tunify/blob/main/docs/home.png)
-![Quick Glimpse](https://github.com/jeandre-visser/tunify/blob/main/docs/glimpse.webm)
+![tunify](https://github.com/jeandre-visser/tunify/blob/main/docs/tunify.gif)
 
 ## Technical Stack and Tools
 
