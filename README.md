@@ -1,4 +1,4 @@
-# tunify
+# Tunify
 
 A seamless and responsive Spotify clone application built with React, Tailwind, and Redux!
 
