@@ -12,9 +12,16 @@ Check out the deployed application here: https://tunify-music-app.netlify.app/
 - Press on any song name for the lyrics and related songs or on an artist name to display related songs as well.
 
 ## Quick Glimpse
+
 ![Home page](https://github.com/jeandre-visser/tunify/blob/main/docs/home.png)
-[Play Songs](https://github.com/jeandre-visser/tunify/blob/main/docs/tunify.gif)
-[Artist & Song Details](https://github.com/jeandre-visser/tunify/blob/main/docs/details.gif)
+
+### **Play Songs**
+
+![Play Songs](https://github.com/jeandre-visser/tunify/blob/main/docs/tunify.gif)
+
+### **Artist and Song Details**
+
+![Artist & Song Details](https://github.com/jeandre-visser/tunify/blob/main/docs/details.gif)
 
 ## Technical Stack and Tools
 
