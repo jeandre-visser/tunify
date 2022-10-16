@@ -10,13 +10,14 @@ Check out the deployed application here: https://tunify-music-app.netlify.app/
 
 ## Quick Glimpse
 
-## Technical Stack
+## Technical Stack and Tools
 
 - JavaScript
 - ReactJS
 - Tailwind CSS
 - Redux
 - RapidAPI
+- ViteJS
 
 ## Setup
 
