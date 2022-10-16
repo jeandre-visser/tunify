@@ -9,6 +9,8 @@ Check out the deployed application here: https://tunify-music-app.netlify.app/
  Browse or search any song, artist, or genre of music to your liking! Even select 'Your Country' in the sidebar menu and popular songs within your country will be displayed. Select any song by pressing play and the music player will slide in to the bottom of the screen
 
 ## Quick Glimpse
+![Home page](https://github.com/jeandre-visser/tunify/blob/main/docs/home.png)
+![Quick Glimpse](https://github.com/jeandre-visser/tunify/blob/main/docs/glimpse.webm)
 
 ## Technical Stack and Tools
 
