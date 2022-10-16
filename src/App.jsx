@@ -8,7 +8,7 @@ const App = () => {
   const { activeSong } = useSelector((state) => state.player);
 
   return (
-    <div className="fixed flex h-100vh">
+    <div className="fixed flex h-full w-full">
       <Sidebar />
       <div className="flex-1 flex flex-col bg-[#620dec]">
         <Searchbar />
