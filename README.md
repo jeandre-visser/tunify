@@ -17,3 +17,11 @@ Check out the deployed application here: https://tunify-music-app.netlify.app/
 - Tailwind CSS
 - Redux
 - RapidAPI
+
+## Setup
+
+If you would like to display the project in a development environment and make changes for your own project, you can do so by the following steps:
+
+1. Fork and clone the repository onto your machine
+2. Install all dependencies with the following command: ```npm install```
+3. Run the app with the following command: ```npm run dev```
