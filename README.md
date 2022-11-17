@@ -4,6 +4,8 @@ A seamless and responsive Spotify clone application built with React, Tailwind, 
 
 Check out the deployed application here: https://tunify-music-app.netlify.app/
 
+***NOTE: If the link does not display any songs, it is because my RapidAPI paid subscription (api where all the song data is fetched from) has expired. Please then refer to the screenshots below!***
+
 ## Description
 
 - Browse or search any song, artist, or genre of music to your liking!
